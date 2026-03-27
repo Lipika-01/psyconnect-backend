@@ -10,7 +10,9 @@ load_dotenv()
 
 app = Flask(__name__)
 
-CORS(app, origins=["http://localhost:3000"])
+CORS(app, origins="*", supports_credentials=False)
+# CORS(app, origins=["http://localhost:3000", "https://psyconnect-frontend.vercel.app"])
+
 
 API_KEY = os.getenv("API_KEY")
 MONGO_URI = os.getenv("MONGO_URI")
